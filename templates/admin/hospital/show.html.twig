@@ -1,0 +1,16 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Show Hospital {{ hospital.getName() }}{% endblock %}
+
+{% block body %}
+    <h4><a href="{{ path('hospital_edit', {'id': hospital.getId()}) }}">{{ hospital.getName() }}</a> </h4>
+    <p>{{ hospital.getAddress() }} &bull; {{ hospital.getPhone() }}</p>
+    <div class="col-lg-12">
+        <h5>Messages</h5>
+        <hr>
+        {% for message in hospital.getContacts() %}
+            <p class="font-weight-bold">{{ message.getSubject() }} &bull; {{ message.getEmail() }}</p>
+            <p>{{ message.getMessage() }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

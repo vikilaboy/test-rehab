@@ -1,0 +1,8 @@
+{{ form_start(form) }}
+    {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
+    {{ form_row(form.phone, {'attr':{'class':'form-control'}}) }}
+    {{ form_row(form.address, {'attr':{'class':'form-control'}}) }}
+    <div class="mx-auto center-form-button-div">
+        <button class="btn btn-success" type="submit">{{ button_label|default('Save') }}</button>
+    </div>
+{{ form_end(form) }}
